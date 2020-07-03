@@ -363,7 +363,7 @@ class IBA(nn.Module):
         We use it also to estimate the distribution of `x` passing through the layer.
         """
         if self._restrict_flow:
-            return self._do_restrict_information(x)
+            return self._do_restrict_information(x,self.alpha)
         if self._estimate:
             self.estimator(x)
         if self._interrupt_execution:
